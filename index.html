@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball Z Fighter</title>
+    <style>
+        body { margin: 0; overflow: hidden; background: #000; }
+        canvas { display: block; }
+        #ui { position: absolute; top: 10px; left: 10px; color: white; font-family: Arial; }
+    </style>
+</head>
+<body>
+    <div id="ui">
+        <div>Player Health: <span id="playerHealth">100</span></div>
+        <div>Enemy Health: <span id="enemyHealth">100</span></div>
+        <div>Power Level: <span id="powerLevel">0</span></div>
+        <div>Combo: <span id="combo">0</span></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r150/three.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
