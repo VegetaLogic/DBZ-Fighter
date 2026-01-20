@@ -62,8 +62,28 @@ scene.add(enemy);
 
 // Controls
 const keys = {};
-document.addEventListener('keydown', (event) => { keys[event.code] = true; });
-document.addEventListener('keyup', (event) => { keys[event.code] = false; });
+let gameStarted = false;
+
+// Start game function
+function startGame() {
+    gameStarted = true;
+    document.getElementById('titleScreen').style.display = 'none';
+    animate();
+}
+
+// Event listeners
+document.addEventListener('keydown', (event) => {
+    if (!gameStarted && event.code === 'Enter') {
+        startGame();
+    }
+    if (gameStarted) {
+        keys[event.code] = true;
+    }
+});
+
+document.addEventListener('keyup', (event) => {
+    keys[event.code] = false;
+});
 
 // Game variables
 let playerHealth = 100;
@@ -153,8 +173,6 @@ function animate() {
 
     renderer.render(scene, camera);
 }
-
-animate();
 
 // Window resize
 window.addEventListener('resize', () => {
